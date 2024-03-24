@@ -64,9 +64,9 @@ class Menu {
         int ostt = okr % 100;
         String str = String.format("%d", okr);
 
-        if (((4 < ost) && (okr <= 20)) || (okr == 11) || ((okr > 110) && (ost == 1))) {
+        if (((okr > 4) && (okr <= 20)) || (okr == 11) || ((okr > 110) && (ost > 4))) {
             System.out.printf("Каждый должен заплатить: %.2f рублей\n", peoplesMoney / peoples);
-        } else if (ost == 0) {
+        } else if ((ost == 0) || (okr == 111) || (ostt == 11)) {
             System.out.printf("Каждый должен заплатить: %.2f рублей\n", peoplesMoney / peoples);
         } else if (str.contains("1") && okr <= 101 || ostt == 1){
             System.out.printf("Каждый должен заплатить: %.2f рубль\n", peoplesMoney / peoples);
